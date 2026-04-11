@@ -26,31 +26,35 @@ elif Genero == "Accion" and not Edad >= 13:
 elif Genero == "Aventura" and not Edad >= 10:
     print("Lo sentimos", Nick, ", los juegos de Aventura son para mayores de 10 años. No podemos hacerte una recomendacion.")
 
+if Presupuesto > 0 and Presupuesto < 10:
+    Presupuesto == "Presupuesto_Bajo"
+elif Presupuesto < 30:
+        Presupuesto == "Presupuesto_Medio"
+else Presupuesto > 30:
+      Presupuesto == "Presupuesto_Alto"
 
-if Plataforma == "PC":
-    
-    
-    if Genero == "Aventura":
+Almacenamiento = int(input("Ingrese su capacidad de almacenamiento en GB: "))
+while Almacenamiento < 10:
+    Almacenamiento = int(input("Error, tiene muy poco Almacenamiento"))
 
-        if Jugadores == 1 and Presupuesto >= 1000 and Edad >= 10:
-           Fore.RESET + print("Recomendación 1: Hollow Knight.")
-        
-        if Jugadores >= 2 and Presupuesto >= 3000 and Edad >= 10:
-            print("Recomendación 2: It Takes Two.")
-            
-        if Almacenamiento >= 100 and Presupuesto >= 5000 and Edad >= 18:
-            print("Recomendación 3: Grand Theft Auto V.")
+Jugadores = int(input("Cantidad de jugadores: "))
+while Jugadores < 0 and Jugadores > 4:
+    Jugadores = int(input("Error, reingrese el numero de jugadores (1 y 4): "))
+    Jugadores > 0 Jugadores < 2:
+    Jugadores == "Single Player"
+    Jugadores <= 4:
+    Jugadores == "Multi player"
 
-    if Genero == "Accion":
+Cantidad = int(input("Cantidad de juegos que desea comprar: "))
+Jugadores = int(input("Cantidad de jugadores: "))
+if Plataforma == Mobile and Presupuesto == Presupuesto_Minimo and Genero == Accion and Jugadores == single
+     print ("Podria interesarte ")
+     
+     
 
-        if Jugadores >= 1 and Presupuesto >= 500 and Edad >= 13:
-            print("Recomendación 1: Counter-Strike 2.")
 
-        if Jugadores == 1 and Edad >= 18 and Presupuesto >= 8000:
-            print("Recomendación 2: Cyberpunk 2077.")
 
-        if Jugadores >= 4 and Presupuesto >= 4000:
-            print("Recomendación 3: Left 4 Dead 2.")
-
-            print("Recomendación 3: Resident Evil 4 Remake.")
+Seguir = input("Quiere seguir comprando? (si/no): ")
+while Seguir != "si" and seguir != "no" :
+    Seguir = input("Reingrese opcion (si/no): ")
 
