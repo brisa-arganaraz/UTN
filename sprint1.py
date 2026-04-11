@@ -23,7 +23,36 @@ if Plataforma == "Playstation":
             print("Un buen juego de Playstation para ti seria Resident Evil 5, se acomoda a a tu necesidades y cumple perfectamente con tu presupuesto y almacenamiento, ademas de ser unicamente apto para +18 años")
         elif Genero == "Terror" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >= 1 and Cantidad >=2:
             print("Algunos juegos que te podria recomendarar en base a tus especificaciones seria la saga completa del Resident Evil")
-        elif Genero == "Terro" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
+        elif Genero == "Terror" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
             print("Algunos juegos para jugar con tus amigos seria Back 4 Blood, Phasmophobia, Dying Light 2: Stay Human, estos cumpliran con tus especificaciones totalmente")
         elif Genero == "Terror" and Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
             print("Un buen juego de Playstation para ti seria Resident Evil Village, se acomoda a a tu necesidades y cumple perfectamente con tu presupuesto y almacenamiento, ademas de ser unicamente apto para +18 años")
+        elif Genero == "Terror" and Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >= 1:
+            print("Algunos juegos que te podria recomendarar en base a tus especificaciones seria The Dark Pictures Anthology: House of Ashes, World War Z y Friday the 13th: The Game")
+        elif Genero == "Terror" and not Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Little Nightmares")
+        elif Genero == "Terror" and not Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Luigi's Mansion 3")
+        elif Genero == "Terror" and not Edad >= 18 and Almacenamiento < 1000 and Presupuesto >= 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Spookys Jump Scare Mansion")
+        elif Genero == "Terror" and not Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria The Dark Pictures Anthology: Little Hope")
+        elif Genero == "Accion" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >=1 and Cantidad == 1:
+            print("Un buen juego de Playstation para ti seria Spider-Man: Miles Morales, se acomoda a a tu necesidades y cumple perfectamente con tu presupuesto y almacenamiento, ademas de ser unicamente apto para +18 años")
+        elif Genero == "Accion" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >= 1 and Cantidad >=2:
+            print("Algunos juegos que te podria recomendarar en base a tus especificaciones seria Ratchet & Clank: Rift Apart y Sackboy: A Big Adventure")
+        elif Genero == "Accion" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
+            print("Algunos juegos para jugar con tus amigos seria Kingdom Hearts III y Minecraft cumpliran con tus especificaciones totalmente")
+        elif Genero == "Accion" and Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
+            print("Un buen juego de Playstation para ti seria Uncharted: The Lost Legacy, se acomoda a a tu necesidades y cumple perfectamente con tu presupuesto y almacenamiento, ademas de ser unicamente apto para +18 años")
+        elif Genero == "Accion" and Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >= 1:
+            print("Algunos juegos que te podria recomendarar en base a tus especificaciones seria Crash Bandicoot 4: It's About Time")
+        elif Genero == "Accion" and not Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Lego Marvel Super Heroes 2")
+        elif Genero == "Accion" and not Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Knack 2")
+        elif Genero == "Accion" and not Edad >= 18 and Almacenamiento < 1000 and Presupuesto >= 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Horizon Zero Dawn")
+        elif Genero == "Accion" and not Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >=1 and Cantidad >= 1:
+            print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Plants vs. Zombies: Battle for Neighborville")
+        
