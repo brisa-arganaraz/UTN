@@ -52,14 +52,5 @@ if Plataforma == "PC":
         if Jugadores >= 4 and Presupuesto >= 4000:
             print("Recomendación 3: Left 4 Dead 2.")
 
-    if Genero == "Terror":
-
-        if Jugadores == 1 and Presupuesto >= 1500 and Edad >= 16:
-            print("Recomendación 1: Outlast.")
-
-        if Jugadores >= 2 and Presupuesto >= 2000:
-            print("Recomendación 2: Phasmophobia.")
-
-        if Almacenamiento >= 60 and Presupuesto >= 15000 and Edad >= 18:
             print("Recomendación 3: Resident Evil 4 Remake.")
 
