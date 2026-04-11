@@ -17,49 +17,13 @@ AceptaTerminos = input("¿Acepta los términos y condiciones? (S/N): ")
 if not AceptaTerminos == "S":
     print(Fore.RED + "No puede continuar sin aceptar los términos.")
 
-if Genero == "Terror" and not Edad >= 16:
-    print("Lo sentimos", Nick, ", los juegos de Terror son para mayores de 16 años. No podemos hacerte una recomendacion.")
-
-elif Genero == "Accion" and not Edad >= 13:
-    print("Lo sentimos", Nick, ", los juegos de Accion son para mayores de 13 años. No podemos hacerte una recomendacion.")
-
-elif Genero == "Aventura" and not Edad >= 10:
-    print("Lo sentimos", Nick, ", los juegos de Aventura son para mayores de 10 años. No podemos hacerte una recomendacion.")
-
-
-if Plataforma == "PC":
-    
-    
-    if Genero == "Aventura":
-
-        if Jugadores == 1 and Presupuesto >= 1000 and Edad >= 10:
-           Fore.RESET + print("Recomendación 1: Hollow Knight.")
-        
-        if Jugadores >= 2 and Presupuesto >= 3000 and Edad >= 10:
-            print("Recomendación 2: It Takes Two.")
-            
-        if Almacenamiento >= 100 and Presupuesto >= 5000 and Edad >= 18:
-            print("Recomendación 3: Grand Theft Auto V.")
-
-    if Genero == "Accion":
-
-        if Jugadores >= 1 and Presupuesto >= 500 and Edad >= 13:
-            print("Recomendación 1: Counter-Strike 2.")
-
-        if Jugadores == 1 and Edad >= 18 and Presupuesto >= 8000:
-            print("Recomendación 2: Cyberpunk 2077.")
-
-        if Jugadores >= 4 and Presupuesto >= 4000:
-            print("Recomendación 3: Left 4 Dead 2.")
-
-    if Genero == "Terror":
-
-        if Jugadores == 1 and Presupuesto >= 1500 and Edad >= 16:
-            print("Recomendación 1: Outlast.")
-
-        if Jugadores >= 2 and Presupuesto >= 2000:
-            print("Recomendación 2: Phasmophobia.")
-
-        if Almacenamiento >= 60 and Presupuesto >= 15000 and Edad >= 18:
-            print("Recomendación 3: Resident Evil 4 Remake.")
-
+if Plataforma == "Playstation":
+    if Formato == "Digital":
+        if Genero == "Terror" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >=1 and Cantidad == 1:
+            print("Un buen juego de Playstation para ti seria Resident Evil 5, se acomoda a a tu necesidades y cumple perfectamente con tu presupuesto y almacenamiento, ademas de ser unicamente apto para +18 años")
+        elif Genero == "Terror" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto >= 100000 and Jugadores >= 1 and Cantidad >=2:
+            print("Algunos juegos que te podria recomendarar en base a tus especificaciones seria la saga completa del Resident Evil")
+        elif Genero == "Terro" and Edad >= 18 and Almacenamiento >= 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
+            print("Algunos juegos para jugar con tus amigos seria Back 4 Blood, Phasmophobia, Dying Light 2: Stay Human, estos cumpliran con tus especificaciones totalmente")
+        elif Genero == "Terror" and Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >=1:
+            print("Un buen juego de Playstation para ti seria Resident Evil Village, se acomoda a a tu necesidades y cumple perfectamente con tu presupuesto y almacenamiento, ademas de ser unicamente apto para +18 años")
