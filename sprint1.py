@@ -18,6 +18,10 @@ AceptaTerminos = input("¿Acepta los términos y condiciones? (S/N): ")
 if not AceptaTerminos == "S":
     print(Fore.RED + "No puede continuar sin aceptar los términos.")
 
+Precio_Juego = 10000
+Total_P = Cantidad * Precio_Juego
+
+
 if Plataforma == "Playstation":
     if Formato == "Digital":
 
@@ -181,27 +185,27 @@ if Genero == "Accion" and not Edad >= 13:
     print(Fore.RED + "Lo sentimos " + Nick + ", los juegos de Accion son para mayores de 13.")
     Genero = input(Fore.BLUE + "Escriba el nuevo genero para continuar: ")
 
-while Almacenamiento < 100:
+while Almacenamiento < 10000:
     print(Fore.RED + "Error: Espacio insuficiente.")
     Almacenamiento = int(input(Fore.WHITE + "Reingrese almacenamiento (minimo 100GB): "))
 
-while Presupuesto < 2000:
+while Presupuesto < 10000:
     print(Fore.RED + "Error: Presupuesto insuficiente.")
     Presupuesto = int(input(Fore.WHITE + "Reingrese presupuesto (minimo 2000): "))
 
 Tipo_Presupuesto = "Bajo"
-if Presupuesto > 2000:
+if Presupuesto > 10000:
     Tipo_Presupuesto = "Bajo"
-if Presupuesto > 5000:
+if Presupuesto > 10000:
     Tipo_Presupuesto = "Medio"
-if Presupuesto > 8000:
+if Presupuesto > 10000:
     Tipo_Presupuesto = "Alto"
 
 if Plataforma == "PC":
     if Genero == "Aventura":
         if Jugadores == 1 and Tipo_Presupuesto == "Bajo" and Edad >= 10:
             print(Fore.YELLOW + "Recomendacion: Hollow Knight.")
-            if Presupuesto > 5000:
+            if Presupuesto > 10000:
                 print(Fore.CYAN + "Tip: Tambien tenes presupuesto para It Takes Two.")
         
         if Jugadores >= 2 and Tipo_Presupuesto == "Medio":
@@ -213,7 +217,7 @@ if Plataforma == "PC":
     if Genero == "Accion":
         if Jugadores >= 1 and Tipo_Presupuesto == "Bajo" and Edad >= 13:
             print(Fore.YELLOW + "Recomendacion: Counter-Strike 2.")
-            if Presupuesto > 8000:
+            if Presupuesto > 10000:
                  print(Fore.CYAN + "Tip: Como tenes buen presupuesto, podrias comprar Cyberpunk 2077.")
 
         if Jugadores == 1 and Edad >= 18 and Tipo_Presupuesto == "Alto":
@@ -222,7 +226,7 @@ if Plataforma == "PC":
     if Genero == "Terror" and Edad >= 16:
         if Jugadores == 1 and Tipo_Presupuesto == "Bajo":
             print(Fore.YELLOW + "Recomendacion: Outlast.")
-            if Presupuesto > 4000:
+            if Presupuesto > 10000:
                 print(Fore.CYAN + "Tip: Tambien podes sumar el juego Phasmophobia para jugar con amigos.")
 
         if Jugadores >= 2 and Tipo_Presupuesto == "Medio":
@@ -302,3 +306,12 @@ if Plataforma == "Mobile":
         print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Stardew Valley")
     elif Genero == "Aventura" and not Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >= 1:
         print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Cut the Rope Remastered")
+
+if Total_P > Presupuesto:
+    print("Perfecto, te alcanza para la compra")
+else:
+    print("Desgraciadamente no te alcanza")
+
+Reseña = input("Desea dejar una reseña? (si/no) ")
+if Reseña == "si" or Reseña == "no":
+    print("Muchas gracias, vuelva pronto")
