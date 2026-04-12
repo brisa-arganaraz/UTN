@@ -76,3 +76,5 @@ if Plataforma == "PC":
             print(Fore.YELLOW + "Recomendacion: Phasmophobia.")
 
 print(Fore.GREEN + "Gracias por usar el sistema de recomendaciones, " + Nick + "!")
+
+
