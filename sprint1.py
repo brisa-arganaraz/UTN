@@ -314,4 +314,8 @@ else:
 
 Reseña = input("Desea dejar una reseña? (si/no) ")
 if Reseña == "si" or Reseña == "no":
+<<<<<<< HEAD
     print("Muchas gracias, vuelva pronto")
+=======
+    print("Muchas gracias, vuelva pronto")
+>>>>>>> c23d2518c711f1c830a36e6ae695525e3aee1658
