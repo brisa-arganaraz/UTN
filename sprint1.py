@@ -18,6 +18,9 @@ AceptaTerminos = input("¿Acepta los términos y condiciones? (S/N): ")
 if not AceptaTerminos == "S":
     print(Fore.RED + "No puede continuar sin aceptar los términos.")
 
+Precio_Juego = 10000
+Total_P = Cantidad * Precio_Juego
+
 if Plataforma == "Playstation":
     if Formato == "Digital":
 
@@ -247,6 +250,11 @@ if Plataforma == "Mobile":
     elif Genero == "Aventura" and not Edad >= 18 and Almacenamiento < 1000 and Presupuesto < 100000 and Jugadores >= 1 and Cantidad >= 1:
         print("Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Cut the Rope Remastered")
 
-Reseña = input("Desea dejar una reseña? ")
+if Total_P > Presupuesto:
+    print("Perfecto, te alcanza para la compra")
+else:
+    print("Desgraciadamente no te alcanza")
+
+Reseña = input("Desea dejar una reseña? (si/no) ")
 if Reseña == "si" or Reseña == "no":
     print("Muchas gracias, vuelva pronto")
