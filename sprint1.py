@@ -34,11 +34,11 @@ if plataforma == "PC":
 
     if genero == "Terror" and edad < 16:
         print(Fore.RED + "Lo sentimos " + nick + ", Terror es para mayores de 16.")
-        genero = input(Fore.BLUE + "Escriba el nuevo Género: ")
+        genero = input(Fore.BLUE + "Escriba el nuevo Genero: ")
     
     if genero == "Accion" and edad < 13:
         print(Fore.RED + "Lo sentimos "+ nick +", Acción es para mayores de 13.")
-        genero = input(Fore.BLUE + "Escriba el nuevo Género: ")
+        genero = input(Fore.BLUE + "Escriba el nuevo Genero: ")
 
     if presupuesto < 2000:
         print(Fore.RED + "Error: Presupuesto insuficiente.")
