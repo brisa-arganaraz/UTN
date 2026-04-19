@@ -54,7 +54,6 @@ if plataforma == "Playstation":
     elif presupuesto > 150000:
         print(Fore.CYAN + "Nota: Presupuesto alto, tenes acceso a cualquier titulo AAA disponible.")
 
-
     if formato == "Digital":
 
         # --- TERROR ---
@@ -206,64 +205,57 @@ if plataforma == "Playstation":
         elif genero == "Aventura" and not edad >= 18 and almacenamiento < 1000 and presupuesto < 100000 and jugadores >= 1 and cantidad >= 1:
             print(Fore.YELLOW + "Un juego para alguien menor de 18 años y cumpliendo con las demas especificaciones seria Astro's Playroom")
 
-
-# --- BLOQUE PC (corregir) ---
+# --- BLOQUE PC ---
 if plataforma == "PC":
 
     print(Fore.WHITE + "=" * 50)
     print(Fore.CYAN + "          RECOMENDACIONES PARA PC")
     print(Fore.WHITE + "=" * 50)
 
-    if genero == "Terror" and not edad >= 16:
-        print(Fore.RED + "Lo sentimos " + nick + ", los juegos de Terror son para mayores de 16.")
-        genero = input(Fore.BLUE + "Escriba el nuevo Género para continuar: ")
+    if genero == "Terror" and edad < 16:
+        print(Fore.RED + "Lo sentimos " + nick + ", Terror es para mayores de 16.")
+        genero = input(Fore.BLUE + "Escriba el nuevo Género: ")
+    
+    if genero == "Accion" and edad < 13:
+        print(Fore.RED + "Lo sentimos "+ nick +", Acción es para mayores de 13.")
+        genero = input(Fore.BLUE + "Escriba el nuevo Género: ")
 
-    if genero == "Accion" and not edad >= 13:
-        print(Fore.RED + "Lo sentimos " + nick + ", los juegos de Accion son para mayores de 13.")
-        genero = input(Fore.BLUE + "Escriba el nuevo genero para continuar: ")
-
-    while almacenamiento < 10000:
-        print(Fore.RED + "Error: Espacio insuficiente.")
-        almacenamiento = int(input(Fore.WHITE + "Reingrese almacenamiento (minimo 100GB): "))
-
-    while presupuesto < 10000:
+    if presupuesto < 2000:
         print(Fore.RED + "Error: Presupuesto insuficiente.")
-        presupuesto = int(input(Fore.WHITE + "Reingrese presupuesto (minimo 2000): "))
+        presupuesto = int(input(Fore.WHITE + "Reingrese presupuesto (mínimo 2000): "))
 
-    tipo_presupuesto = "Bajo"
-    if presupuesto > 10000:
-        tipo_presupuesto = "Bajo"
-    if presupuesto > 10000:
-        tipo_presupuesto = "Medio"
-    if presupuesto > 10000:
+    if almacenamiento < 100:
+        print(Fore.RED + "Error: Almacenamiento insuficiente.")
+        almacenamiento = int(input(Fore.WHITE + "Reingrese almacenamiento (minimo 100GB): "))    
+
+    if presupuesto >= 8000:
         tipo_presupuesto = "Alto"
+    elif presupuesto >= 5000:
+        tipo_presupuesto = "Medio"
+    else:
+        tipo_presupuesto = "Bajo"
+
+    print(Fore.CYAN + "Analizando opciones para " + nick + "..." )
 
     if genero == "Aventura":
-        if jugadores == 1 and tipo_presupuesto == "Bajo" and edad >= 10:
-            print(Fore.YELLOW + "Recomendacion: Hollow Knight.")
-            if presupuesto > 10000:
-                print(Fore.CYAN + "Tip: Tambien tenes presupuesto para It Takes Two.")
-        if jugadores >= 2 and tipo_presupuesto == "Medio":
-            print(Fore.YELLOW + "Recomendacion: It Takes Two.")
-        if almacenamiento >= 100 and tipo_presupuesto == "Alto" and edad >= 18:
+        if jugadores == 1 and tipo_presupuesto == "Alto" and edad >= 18 and almacenamiento >= 100:
             print(Fore.YELLOW + "Recomendacion: Grand Theft Auto V.")
+        elif jugadores == 1 and edad >= 10:
+            print(Fore.YELLOW + "Recomendacion: Hollow Knight.")
+        elif jugadores >= 2:
+            print(Fore.YELLOW + "Recomendacion: It Takes Two.")
 
-    if genero == "Accion":
-        if jugadores >= 1 and tipo_presupuesto == "Bajo" and edad >= 13:
-            print(Fore.YELLOW + "Recomendacion: Counter-Strike 2.")
-            if presupuesto > 10000:
-                print(Fore.CYAN + "Tip: Como tenes buen presupuesto, podrias comprar Cyberpunk 2077.")
-        if jugadores == 1 and edad >= 18 and tipo_presupuesto == "Alto":
+    elif genero == "Accion":
+        if edad >= 18 and tipo_presupuesto == "Alto":
             print(Fore.YELLOW + "Recomendacion: Cyberpunk 2077.")
+        elif edad >= 13: 
+            print(Fore.YELLOW + "Recomendacion: Counter-Strike 2.")
 
-    if genero == "Terror" and edad >= 16:
-        if jugadores == 1 and tipo_presupuesto == "Bajo":
+    elif genero == "Terror":
+        if jugadores == 1:
             print(Fore.YELLOW + "Recomendacion: Outlast.")
-            if presupuesto > 10000:
-                print(Fore.CYAN + "Tip: Tambien podes sumar el juego Phasmophobia para jugar con amigos.")
-        if jugadores >= 2 and tipo_presupuesto == "Medio":
+        elif jugadores >= 2 and tipo_presupuesto != "Bajo":
             print(Fore.YELLOW + "Recomendacion: Phasmophobia.")
-
 
 if plataforma == "Mobile":
 
