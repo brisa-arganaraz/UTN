@@ -14,10 +14,35 @@ if "@" not in mail:
 print(Fore.GREEN + "Perfecto, ahora te ire pidiendo datos que me permitiran brindarte un juego de tu agrado")
 plataforma = input(Fore.BLUE + "Ingrese la plataforma en la cual juega (Playstation/PC/Mobile): ")
 formato = input(Fore.BLUE + "Ingrese el formato de juego que desea (Fisico/Digital): ")
-genero = input(Fore.BLUE + "Ingrese el Genero de juego que prefiere (Terror/Accion/Aventura): ")
-edad = int(input(Fore.BLUE + "Ingrese su edad: "))
+while formato != "Fisico" and formato != "Digital":
+    formato = input(Fore.BLUE + "ERROR, reingrese nuevamente el formato de juego que desea (Fisico/Digital): ")
+genero = input(Fore.BLUE + "Ingrese el genero de juego que prefiere (Terror/Accion/Aventura): ")
+while genero != "Terror" and genero != "Accion" and genero != "Aventura":
+    genero = input(Fore.BLUE + "ERROR, reingrese nuevamente el genero del juego que desea (Terror/Accion/Aventura): ")
+while True:
+    edad_texto = input("Ingrese su edad: ")
+    
+    if edad_texto.strip() == "":
+        print("ERROR... no puede estar vacío")
+        continue
+    
+    if not edad_texto.isdigit():
+        print("ERROR... debe ser un número")
+        continue
+    
+    edad = int(edad_texto)
+
+    if edad < 5 or edad > 90:
+        print("ERROR... la edad debe estar entre 5 y 90 años")
+        continue
+
+    break
 almacenamiento = int(input(Fore.BLUE + "Ingrese su capacidad de almacenamiento en GB: "))
+while almacenamiento <= 0:
+    almacenamiento = int(input("Error... el almacenamiento no puede ser menor o igual a 0, Reingrese nuevamente: "))
 presupuesto = int(input(Fore.BLUE + "Ingrese su presupuesto: "))
+while presupuesto <= 0:
+    presupuesto = int(input("Error... El presupuesto no puede ser menor o igual a 0, reingrese nuevamente: "))
 jugadores = int(input(Fore.BLUE + "Cantidad de jugadores: "))
 while jugadores <= 0:
     print(Fore.RED + "Error: La cantidad de jugadores debe ser al menos 1.")
