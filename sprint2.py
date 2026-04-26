@@ -3,16 +3,26 @@
 from colorama import *
 init()
 
-nick = input(Fore.BLUE + "Ingrese su Nick de jugador: ")
-print(Fore.GREEN + "Hola", nick, "a continuacion te pedire que escribas tu Mail para poder recibir un correo con tu recibo y las especificaciones de tu pedido")
-mail = input(Fore.BLUE + "Ingrese su Mail: ")
+while True:
+    nick = input(Fore.BLUE + "Ingrese su Nick de jugador: ")
+    if nick.strip() != "":
+        break
+    print(Fore.RED + "El nick no puede estar vacío.")
 
-if "@" not in mail:
-    print(Fore.RED + "Mail invalido. Asegurese de incluir '@' en su direccion de correo.")
-    mail = input(Fore.BLUE + "Ingrese su Mail nuevamente: ")
+while True:
+    mail = input(Fore.BLUE + "Ingrese su Mail: ")
+    if "@" in mail and "." in mail:
+        break
+    print(Fore.RED + "Mail invalido. Debe contener '@' y '.'")
 
 print(Fore.GREEN + "Perfecto, ahora te ire pidiendo datos que me permitiran brindarte un juego de tu agrado")
-plataforma = input(Fore.BLUE + "Ingrese la plataforma en la cual juega (Playstation/PC/Mobile): ")
+plataformas_validas = ["Playstation", "PC", "Mobile"]
+while True:
+    plataforma = input(Fore.BLUE + "Ingrese la plataforma en la cual juega (Playstation/PC/Mobile): ")
+    if plataforma in plataformas_validas:
+        break
+    print(Fore.RED + "Plataforma invalida. Escriba exactamente: Playstation, PC o Mobile.")
+    
 formato = input(Fore.BLUE + "Ingrese el formato de juego que desea (Fisico/Digital): ")
 genero = input(Fore.BLUE + "Ingrese el Genero de juego que prefiere (Terror/Accion/Aventura): ")
 edad = int(input(Fore.BLUE + "Ingrese su edad: "))
