@@ -24,14 +24,47 @@ while True:
     print(Fore.RED + "Plataforma invalida. Escriba exactamente: Playstation, PC o Mobile.")
     
 formato = input(Fore.BLUE + "Ingrese el formato de juego que desea (Fisico/Digital): ")
-genero = input(Fore.BLUE + "Ingrese el Genero de juego que prefiere (Terror/Accion/Aventura): ")
-edad = int(input(Fore.BLUE + "Ingrese su edad: "))
-almacenamiento = int(input(Fore.BLUE + "Ingrese su capacidad de almacenamiento en GB: "))
-presupuesto = int(input(Fore.BLUE + "Ingrese su presupuesto: "))
-jugadores = int(input(Fore.BLUE + "Cantidad de jugadores: "))
-cantidad = int(input(Fore.BLUE + "Cantidad de juegos que desea comprar: "))
-acepta_terminos = input(Fore.BLUE + "¿Acepta los términos y condiciones? (S/N): ")
+while formato != "Fisico" and formato != "Digital":
+    formato = input(Fore.BLUE + "ERROR, reingrese nuevamente el formato de juego que desea (Fisico/Digital): ")
+genero = input(Fore.BLUE + "Ingrese el genero de juego que prefiere (Terror/Accion/Aventura): ")
+while genero != "Terror" and genero != "Accion" and genero != "Aventura":
+    genero = input(Fore.BLUE + "ERROR, reingrese nuevamente el genero del juego que desea (Terror/Accion/Aventura): ")
+while True:
+    edad_texto = input("Ingrese su edad: ")
+    
+    if edad_texto.strip() == "":
+        print("ERROR... no puede estar vacío")
+        continue
+    
+    if not edad_texto.isdigit():
+        print("ERROR... debe ser un número")
+        continue
+    
+    edad = int(edad_texto)
 
+    if edad < 5 or edad > 90:
+        print("ERROR... la edad debe estar entre 5 y 90 años")
+        continue
+
+    break
+almacenamiento = int(input(Fore.BLUE + "Ingrese su capacidad de almacenamiento en GB: "))
+while almacenamiento <= 0:
+    almacenamiento = int(input("Error... el almacenamiento no puede ser menor o igual a 0, Reingrese nuevamente: "))
+presupuesto = int(input(Fore.BLUE + "Ingrese su presupuesto: "))
+while presupuesto <= 0:
+    presupuesto = int(input("Error... El presupuesto no puede ser menor o igual a 0, reingrese nuevamente: "))
+jugadores = int(input(Fore.BLUE + "Cantidad de jugadores: "))
+while jugadores <= 0:
+    print(Fore.RED + "Error: La cantidad de jugadores debe ser al menos 1.")
+    jugadores = int(input(Fore.BLUE + "Ingrese la cantidad de jugadores nuevamente: "))
+cantidad = int(input(Fore.BLUE + "Cantidad de juegos que desea comprar: "))
+while cantidad <= 0:
+    print(Fore.RED + "Error: Debe comprar al menos 1 juego.")
+    cantidad = int(input(Fore.BLUE + "Ingrese la cantidad de juegos nuevamente: "))
+acepta_terminos = input(Fore.BLUE + "¿Acepta los términos y condiciones? (S/N): ")
+while acepta_terminos != "S" and acepta_terminos != "s" and acepta_terminos != "N" and acepta_terminos != "n":
+    print(Fore.RED + "Error: Entrada no reconocida. Debe ingresar S o N.")
+    acepta_terminos = input(Fore.BLUE + "Intente nuevamente (S/N): ")
 if acepta_terminos != "S":
     print(Fore.RED + "No puede continuar sin aceptar los términos.")
     exit()
