@@ -19,9 +19,17 @@ edad = int(input(Fore.BLUE + "Ingrese su edad: "))
 almacenamiento = int(input(Fore.BLUE + "Ingrese su capacidad de almacenamiento en GB: "))
 presupuesto = int(input(Fore.BLUE + "Ingrese su presupuesto: "))
 jugadores = int(input(Fore.BLUE + "Cantidad de jugadores: "))
+while jugadores <= 0:
+    print(Fore.RED + "Error: La cantidad de jugadores debe ser al menos 1.")
+    jugadores = int(input(Fore.BLUE + "Ingrese la cantidad de jugadores nuevamente: "))
 cantidad = int(input(Fore.BLUE + "Cantidad de juegos que desea comprar: "))
+while cantidad <= 0:
+    print(Fore.RED + "Error: Debe comprar al menos 1 juego.")
+    cantidad = int(input(Fore.BLUE + "Ingrese la cantidad de juegos nuevamente: "))
 acepta_terminos = input(Fore.BLUE + "¿Acepta los términos y condiciones? (S/N): ")
-
+while acepta_terminos != "S" and acepta_terminos != "s" and acepta_terminos != "N" and acepta_terminos != "n":
+    print(Fore.RED + "Error: Entrada no reconocida. Debe ingresar S o N.")
+    acepta_terminos = input(Fore.BLUE + "Intente nuevamente (S/N): ")
 if acepta_terminos != "S":
     print(Fore.RED + "No puede continuar sin aceptar los términos.")
     exit()
