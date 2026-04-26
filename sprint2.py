@@ -68,32 +68,50 @@ while True:
     except:
         print(Fore.RED + "Solo se aceptan numeros enteros.")
 
+jugadores = int(input(Fore.BLUE + "Cantidad de jugadores: "))
 while True:
-    try:
-        jugadores = int(input(Fore.BLUE + "Cantidad de jugadores: "))
-        if jugadores >= 1:
-            break
-        print(Fore.RED + "Debe haber al menos 1 jugador.")
-    except:
-        print(Fore.RED + "Solo se aceptan numeros enteros.")
+    jugadores_texto = input("Cantidad de jugadores: ")
+    
+    if jugadores_texto.strip() == "":
+        print("ERROR... no puede estar vacío")
+        continue
+    
+    if not jugadores_texto.isdigit():
+        print("ERROR... debe ser un número")
+        continue
+    
+    jugadores = int(jugadores_texto)
 
+    if jugadores < 1:
+        print("ERROR... La cantidad de jugadores debe ser al menos 1")
+        continue
+
+    break
+cantidad = int(input(Fore.BLUE + "Cantidad de juegos que desea comprar: "))
 while True:
-    try:
-        cantidad = int(input(Fore.BLUE + "Cantidad de juegos que desea comprar: "))
-        if cantidad >= 1:
-            break
-        print(Fore.RED + "Debe comprar al menos 1 juego.")
-    except:
-        print(Fore.RED + "Solo se aceptan numeros enteros.")
+    cantidad_texto = input("Cantidad de juegos: ")
+    
+    if cantidad_texto.strip() == "":
+        print("ERROR... no puede estar vacío")
+        continue
+    
+    if not cantidad_texto.isdigit():
+        print("ERROR... debe ser un número")
+        continue
+    
+    cantidad = int(jugadores_texto)
 
-while True:
-    acepta_terminos = input(Fore.BLUE + "¿Acepta los terminos y condiciones? (S/N): ")
-    if acepta_terminos in ["S", "s", "N", "n"]:
-        break
-    print(Fore.RED + "Respuesta invalida. Escriba S o N.")
+    if cantidad < 1:
+        print("ERROR... Debe comprar al menos 1 juego")
+        continue
 
-if acepta_terminos.upper() != "S":
-    print(Fore.RED + "No puede continuar sin aceptar los terminos.")
+    break
+acepta_terminos = input(Fore.BLUE + "¿Acepta los términos y condiciones? (S/N): ")
+while acepta_terminos != "S" and acepta_terminos != "s" and acepta_terminos != "N" and acepta_terminos != "n":
+    print(Fore.RED + "Error: Entrada no reconocida. Debe ingresar S o N.")
+    acepta_terminos = input(Fore.BLUE + "Intente nuevamente (S/N): ")
+if acepta_terminos != "S":
+    print(Fore.RED + "No puede continuar sin aceptar los términos.")
     exit()
 
 precio_juego = 10000
